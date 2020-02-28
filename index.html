@@ -17,7 +17,7 @@
 
 	<section class="form hide">
 		<h2>Entre na lista de doadores</h2>
-		<form action="/">
+		<form action="/" method="POST">
 			<input type="text" name="name" placeholder="Nome completo">
 			<input type="text" name="email" placeholder="E-mail">
 			<input type="text" name="blood" placeholder="Tipo sanguíneo">
@@ -28,22 +28,12 @@
 	<main>
 		<h2>Últimos <span>doadores</span></h2>
 		<section class="donors">
+			{% for donor in donors %}
 			<div class="donor">
-				<div class="blood">AB+</div>
-				<p>Lorena</p>
+				<div class="blood">{{donor.blood}}</div>
+				<p>{{donor.name}}</p>
 			</div>
-			<div class="donor">
-				<div class="blood">AB+</div>
-				<p>Lorena</p>
-			</div>
-			<div class="donor">
-				<div class="blood">AB+</div>
-				<p>Lorena</p>
-			</div>
-			<div class="donor">
-				<div class="blood">AB+</div>
-				<p>Lorena</p>
-			</div>
+			{%endfor%}
 		</section>
 	</main>
 
